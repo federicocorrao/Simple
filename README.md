@@ -43,7 +43,7 @@ Simple's (LL(2), recursive-descent parsed) grammar:
 	{ <Sequence> }
 ```			 
 In Simple, every syntactical construct is an expression.
-An expression returns a list of values, which can be numbers and lists too.
+Expressions return lists of values, which can be numbers and lists too.
 - A number represents a list with only one element, and viceversa
 - An empty list has undefined value. A list never contains undefined values inside
 - You can build lists with more than one value using blocks 
