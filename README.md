@@ -1,7 +1,7 @@
 #Simple
 Simple is a toy homemade scripting language implemented in C#. Started as a Simple IMPerative LanguageE implementation for a university course in Models of Computation, it has been extended with closures. Of course, it has an educational purpose only. It is not meant to be efficient nor complete. The project is closed, since it will be the basis for a more efficient Simple implementation (in C++).
 
-Simple's (LL(2), recursive-descent parsed) grammar:
+Simple's (recursive-descent parsed) grammar:
 ```
 <Axiom> ::
 	<Program> $
