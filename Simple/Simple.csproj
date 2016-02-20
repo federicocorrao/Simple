@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{29FDC987-EABA-4D0F-A505-C801EF876E32}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Simple</RootNamespace>
+    <AssemblyName>Simple</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Frontend\Preprocessor.cs" />
+    <Compile Include="Commons\Commons.cs" />
+    <Compile Include="Commons\Exceptions.cs">
+      <DependentUpon>Output.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Commons\Log.cs" />
+    <Compile Include="Frontend\Lexer.cs" />
+    <Compile Include="Frontend\Parser.cs" />
+    <Compile Include="Frontend\Parser\0. Axiom.cs" />
+    <Compile Include="Frontend\Parser\1. Program.cs" />
+    <Compile Include="Frontend\Parser\2. Expression.cs" />
+    <Compile Include="Frontend\Parser\3. Value.cs" />
+    <Compile Include="Frontend\Parser\5. Sequence.cs" />
+    <Compile Include="Frontend\Parser\6. Continuation.cs" />
+    <Compile Include="Frontend\Parser\7. Names.cs" />
+    <Compile Include="Frontend\Parser\4. Block.cs" />
+    <Compile Include="Interpreter\Types.cs" />
+    <Compile Include="Interpreter\Env.cs" />
+    <Compile Include="Interpreter\Types\1. Object.cs" />
+    <Compile Include="Interpreter\Types\2. BaseType.cs" />
+    <Compile Include="Interpreter\Types\4. Number.cs" />
+    <Compile Include="Interpreter\Types\3. Undefined.cs" />
+    <Compile Include="Interpreter\Types\5. Closure.cs" />
+    <Compile Include="Interpreter\Types\6. Reference.cs" />
+    <Compile Include="Interpreter\Types\7. Identifier.cs" />
+    <Compile Include="Interpreter\Interpreter.cs" />
+    <Compile Include="Interpreter\BuiltIns.cs" />
+    <Compile Include="Interpreter\Types\9. List.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Frontend\" />
+    <Folder Include="Interpreter\" />
+    <Folder Include="Utils\" />
+    <Folder Include="Commons\" />
+    <Folder Include="Frontend\Parser\" />
+    <Folder Include="Interpreter\Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Utils\loop.simple">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Utils\readme.txt" />
+  </ItemGroup>
+</Project>
