@@ -115,7 +115,7 @@ namespace Simple
             Interpreter i = new Interpreter(this.Environment.Copy());
             System.Threading.ThreadStart s = new System.Threading.ThreadStart(delegate()
             {
-                i.Evaluate(node.E); // problema: le primitive stesse del linguaggio dovrebbero essere thread-safe
+                i.Evaluate(node.E); // ! Not yet thread safe
             });
             System.Threading.Thread t = new System.Threading.Thread(s);
             t.Start();
