@@ -52,13 +52,13 @@ Expressions return lists of values, which can be numbers and lists too.
 
 Some examples:
 ```
-i = undefined				  # equivalent to {}, {undefined}, {{undefined} {undefined}}, etc
-i = 0 						  # equivalent to {0}, {{0}}, {{{0}}}, etc
-i = {1 2 3}					  # equivalent to {1 2 3}, {{1 2 3}}, {1 2 3 undefined}, etc
+i = undefined				  	# equivalent to {}, {undefined}, {{undefined} {undefined}}, etc
+i = 0 						# equivalent to {0}, {{0}}, {{{0}}}, etc
+i = {1 2 3}					# equivalent to {1 2 3}, {{1 2 3}}, {1 2 3 undefined}, etc
 	
-   a = if 1 then {1} else {2}			          # returns 1
-do a = if 1 then {1} else {2}			          # returns undefined
-   a = while neq(n 0) loop {n do n = sub(n 1)}	  # returns {1 .. n}
+   a = if 1 then {1} else {2}			# returns 1
+do a = if 1 then {1} else {2}			# returns undefined
+   a = while neq(n 0) loop {n do n = sub(n 1)}	# returns {1 .. n}
 ```	
 Some recursion and functional programming examples:	
 ```	
